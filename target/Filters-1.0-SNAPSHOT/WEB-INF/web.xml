@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>demo.filters.DemoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/simple</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>UsernameFilter</filter-name>
+        <filter-class>demo.filters.UsernameFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UsernameFilter</filter-name>
+        <url-pattern>/DemoServlet</url-pattern>
+    </filter-mapping>
+</web-app>
